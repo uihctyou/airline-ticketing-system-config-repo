@@ -1,0 +1,13 @@
+server:
+  port: 8899
+
+spring:
+  application:
+    name: airline-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/uihctyou/airline-ticketing-system-config-repo.git
+          search-paths: '{application}'
+          clone-on-start: true
