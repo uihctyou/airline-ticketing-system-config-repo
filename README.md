@@ -10,8 +10,11 @@ This repository centralizes configurations for all microservices in the **Airlin
 
 本仓库通过 Spring Cloud Config Server 集中管理 **航空票务系统** 所有微服务的配置文件。
 
+<br/>
 
 ## Repository Structure / 仓库结构
+
+
 
 ### **Directory Conventions / 目录规范**
 ```
@@ -48,6 +51,7 @@ Config Server self-configuration (e.g., Git URI)
   Config Server 自身配置（如 Git 仓库地址）
 
 
+<br/>
 
 ## Usage Guide / 使用说明
 
@@ -64,6 +68,7 @@ Config Server self-configuration (e.g., Git URI)
 ### **2. Dynamic Configuration Refresh / 动态刷新配置**
 1. Modify config files and push changes to Git.  
    修改配置文件并提交到 Git 仓库。
+   
 2. Send a refresh request to the target service:  
    向目标服务发送刷新请求：
    ```bash
@@ -73,6 +78,7 @@ Config Server self-configuration (e.g., Git URI)
    配置热生效（需在 Bean 上添加 `@RefreshScope`）。
 
 
+<br/>
 
 ##  Configuration Examples / 配置示例
 
@@ -103,13 +109,16 @@ logging:
 ```
 
 
+<br/>
 
 ## Important Notes / 注意事项
 
 1. **Branch Management**: Default branch is `main`. Use `spring.cloud.config.server.git.default-label` for custom branches.  
    **分支管理**: 默认使用 `main` 分支，可通过 `spring.cloud.config.server.git.default-label` 指定其他分支。
+
 2. **Sensitive Data Encryption**: Encrypt passwords with symmetric keys or integrate Vault.  
    **敏感信息加密**: 对密码等敏感数据使用对称加密或集成 Vault。
+
 3. **Local Testing**: Verify repository accessibility before deployment:  
    **本地测试**: 启动前确保仓库可访问：
    ```bash
@@ -117,6 +126,7 @@ logging:
    ```
 
 
+<br/>
 
 ## License / 许可证
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.  
