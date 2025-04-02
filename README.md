@@ -20,12 +20,8 @@ This repository centralizes configurations for all microservices in the **Airlin
 ```
 airline-ticketing-system-config-repo/
 ├── infrastructure/               # Infrastructure Layer 基础设施模块
-│   ├── airline-eureka-server/    # Eureka Server 服务注册中心
-│   │   └── application.yml
-│   ├── airline-config-server/    # Config Server 配置中心
-│   │   └── application.yml
-│   └── airline-api-gateway/      # API Gateway API 网关
-│       └── application.yml
+│   └── airline-config-server/    # Config Server 配置中心
+│       └── application.yml       # Remove (可移除 - 2025-04-02 updated）
 │
 └── services/                     # Business Services Layer 业务服务模块
     ├── airline-flight-service/   # Flight Service 航班服务
