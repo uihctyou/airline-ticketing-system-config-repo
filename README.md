@@ -7,8 +7,20 @@
 ![Version](https://img.shields.io/badge/airline_ticketing_system_config_repo-v1.0.25.401-pink)
 
 This repository centralizes configurations for all microservices in the **Airline Ticketing System** via Spring Cloud Config Server.  
+It follows a structured directory layout (infrastructure/ for core components, services/ for business modules) and supports multi-environment profiles (e.g., dev, prod). Key features include Git-based versioning, dynamic refresh via /actuator/refresh, and sensitive data encryption. Each service loads configurations by matching spring.application.name to its directory. Ideal for DevOps teams seeking scalable, maintainable configuration management with seamless integration to Eureka and other Spring Cloud components. Licensed under MIT.
+
 
 本仓库通过 Spring Cloud Config Server 集中管理 **航空票务系统** 所有微服务的配置文件。
+采用标准化目录结构（infrastructure/存放基础设施配置，services/管理业务服务），支持多环境配置（如dev/prod）。核心特性包括：Git版本控制、通过/actuator/refresh动态刷新、敏感信息加密。服务通过spring.application.name自动匹配对应目录加载配置，与Eureka等服务发现组件无缝集成。提供完善的开发/生产环境隔离方案，遵循MIT开源协议。
+
+<br/>
+[![Spring](https://img.shields.io/badge/Backend_Link-6DB33F.svg?logo=spring&logoColor=white)](https://github.com/uihctyou/airline-ticketing-system.git) 
+<br/>🔗
+https://github.com/uihctyou/airline-ticketing-system.git
+
+[![React](https://img.shields.io/badge/Frontend_Link-20232a.svg?logo=react&logoColor=61DAFB)](https://github.com/uihctyou/airline-ticketing-system-frontend-user) 
+<br/>🔗
+https://github.com/uihctyou/airline-ticketing-system-frontend-user.git
 
 <br/>
 
@@ -25,12 +37,15 @@ airline-ticketing-system-config-repo/
 │
 └── services/                     # Business Services Layer 业务服务模块
     ├── airline-flight-service/   # Flight Service 航班服务
-    │   ├── application-dev.yml   # Development Config 开发环境
-    │   └── application-prod.yml  # Production Config 生产环境
+    │   ├── application.yml       # Default Config 默認配置文件
+    │   ├── application-dev.yml   # Development Config (Optional) 開發環境（可選）
+    │   └── application-prod.yml  # Production Config (Optional) 生产环境（可選）
     ├── airline-booking-service/  # Booking Service 预订服务
-    │   └── application.yml
+    │   ├── application.yml       # Default Config 默認配置文件
+    │   └── ...
     └── airline-payment-service/  # Payment Service 支付服务
-        └── application.yml
+        ├── application.yml       # Default Config 默認配置文件
+        └── ...
 ```
 
 ### **File Naming Rules / 文件命名规则**
