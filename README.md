@@ -14,6 +14,7 @@ It follows a structured directory layout (infrastructure/ for core components, s
 采用标准化目录结构（infrastructure/存放基础设施配置，services/管理业务服务），支持多环境配置（如dev/prod）。核心特性包括：Git版本控制、通过/actuator/refresh动态刷新、敏感信息加密。服务通过spring.application.name自动匹配对应目录加载配置，与Eureka等服务发现组件无缝集成。提供完善的开发/生产环境隔离方案，遵循MIT开源协议。
 
 <br/>
+
 [![Spring](https://img.shields.io/badge/Backend_Link-6DB33F.svg?logo=spring&logoColor=white)](https://github.com/uihctyou/airline-ticketing-system.git) 
 <br/>🔗
 https://github.com/uihctyou/airline-ticketing-system.git
@@ -133,7 +134,7 @@ logging:
 3. **Local Testing**: Verify repository accessibility before deployment:  
    **本地测试**: 启动前确保仓库可访问：
    ```bash
-   git clone https://github.com/your-username/airline-ticketing-system-config-repo.git
+   git clone https://github.com/uihctyou/airline-ticketing-system.git
    ```
 
 
