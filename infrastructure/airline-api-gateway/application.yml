@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: airline-api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  # 启用服务发现
+          lower-case-service-id: true  # 服务名小写
+      routes:
+        - id: flight-service
+          uri: lb://airline-flight-service  # 负载均衡到航班服务
+          predicates:
+            - Path=/api/flight/**
+        - id: booking-service
+          uri: lb://airline-booking-service
+          predicates:
+            - Path=/api/booking/**
+        - id: payment-service
+          uri: lb://airline-payment-service
+          predicates:
+            - Path=/api/payment/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: airline-payment-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/payment_db?useSSL=false
+    username: payment_user
+    password: payment_pass
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbit_user
+    password: rabbit_pass
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# Stripe 支付配置示例
+stripe:
+  api-key: ${STRIPE_API_KEY}  # 从环境变量注入
+  currency: HKD

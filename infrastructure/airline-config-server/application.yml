@@ -1,16 +1,26 @@
-# Global
+server:
+  port: 8888  # Config Server 默认端口
+
 spring:
+  application:
+    name: airline-config-server
   cloud:
     config:
-      uri: http://config-server:8899  # Config Server address
-    bus:
-      enabled: true                   
-
-logging:
-  level:
-    root: INFO
+      server:
+        git:
+          uri: https://github.com/your-username/airline_ticketing_system_config_repo  # 你的 Git 仓库地址
+          search-paths: 
+            - infrastructure/airline-config-server
+            - services/airline-flight-service
+            - services/airline-booking-service
+            - services/airline-payment-service
+        # 允许直接访问原始配置文件（调试用）
+        allow-override: true
+        override-none: true
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/  # 注册到 Eureka Server
+    register-with-eureka: true
+    fetch-registry: true
