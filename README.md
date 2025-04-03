@@ -1,4 +1,4 @@
-# Airline Ticketing System Configuration Repository
+# Airline Ticketing System Configuration Repository (Removed)
 
 ![Logo](https://socialify.git.ci/uihctyou/airline-ticketing-system-config-repo/image?font=Source%20Code%20Pro&name=1&pattern=Circuit%20Board&theme=Dark)
 
@@ -11,6 +11,16 @@ It follows a structured directory layout (infrastructure/ for core components, s
 
 本仓库通过 Spring Cloud Config Server 集中管理 **航空票务系统** 所有微服务的配置文件。
 采用标准化目录结构（infrastructure/存放基础设施配置，services/管理业务服务），支持多环境配置（如dev/prod）。核心特性包括：Git版本控制、通过/actuator/refresh动态刷新、敏感信息加密。服务通过spring.application.name自动匹配对应目录加载配置，与Eureka等服务发现组件无缝集成。提供完善的开发/生产环境隔离方案，遵循MIT开源协议。
+
+> ⚠️ This Repo was removed: <br>
+> Eureka -> Kubernetes Service <br>
+> Spring cloud config -> Kubernetes Service <br>
+> Spring Cloud Gateway -> Kong <br>
+>
+> ⚠️ 此倉庫已移除: <br>
+> Eureka -> Kubernetes Service <br>
+> Spring cloud config -> Kubernetes Service <br>
+> Spring Cloud Gateway -> Kong <br>
 
 <br/>
 
